@@ -47,7 +47,7 @@ module.exports = {
 
 if (process.env.NODE_ENV === 'production') {
 
-  module.exports.output.publicPath = '/changba-xjf/s'
+  module.exports.output.publicPath = '/changba-xjf/s/'
 
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
