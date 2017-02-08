@@ -34,15 +34,20 @@ export default {
     playCurSong (song){
       this.shareState.curSong = song
       location.hash = this.shareState.songList.length - this.shareState.songList.indexOf(song)
+    },
+    setTitle (){
+      document.title = `谢加非 - ${this.shareState.curSong.songname}`
     }
   },
   mounted: function(){
     scrollCurrentIntoView()
+    this.setTitle()
   },
   watch: {
     'shareState.curSong': function(value){
       this.$nextTick(function(){
         scrollCurrentIntoView()
+        this.setTitle()
         location.hash = this.shareState.songList.length - this.shareState.songList.indexOf(value)
       })
     }
