@@ -11,7 +11,7 @@
       <Control class="control control-next" :handler="next"></Control>
       <Control class="control control-mode" :class="'control-' + mode" :handler="switchMode"></Control>
     </div>
-    <audio :src="shareState.curSong.src" ref="audio" @playing="playing" @timeupdate="timeupdate" @ended="ended" @canplay="canplay"></audio>
+    <audio preload="none" :src="shareState.curSong.src" ref="audio" @playing="playing" @timeupdate="timeupdate" @ended="ended" @canplay="canplay"></audio>
 
   </div>
 </template>
