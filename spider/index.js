@@ -9,6 +9,7 @@ var uid = process.argv[2] || '63156426'
 var localStorageFile = 'localStorage.json'
 var localStorage = ls.loadStorage(localStorageFile)
 var songs = []
+var timeoutIndex = 0;
 
 jsdom.env({
     url: `http://changba.com/u/${uid}`,
@@ -72,7 +73,7 @@ function getSongPath(song, index) {
                     resolve(song)
                     console.log(`${song.songname} done`)
                 })
-            }, 2000 * index)
+            }, 2000 * timeoutIndex++)
 
         })
     }
